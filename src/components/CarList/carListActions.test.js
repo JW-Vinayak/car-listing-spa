@@ -43,7 +43,7 @@ describe("async actions", () => {
         }
       ]
     };
-    fetchMock.getOnce("http://localhost:3001/cars", {
+    fetchMock.getOnce("http://localhost:3001/cars?color=red", {
       body: cars,
       headers: { "content-type": "application/json" }
     });
@@ -52,7 +52,7 @@ describe("async actions", () => {
       { type: actions.FETCH_CARS_BEGIN },
       { type: actions.FETCH_CARS_SUCCESS, payload: cars }
     ];
-    const store = mockStore({ cars: [] });
+    const store = mockStore({ cars: [], filters: { color: "red" } });
 
     return store.dispatch(actions.fetchCars()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);

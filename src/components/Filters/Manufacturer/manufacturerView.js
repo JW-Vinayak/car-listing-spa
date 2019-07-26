@@ -1,0 +1,39 @@
+import React, { useEffect, useState } from "react";
+import { fetchManufacturers } from "../../../utils/api";
+
+const Manufacturer = props => {
+  let [manufacturers, setManufacturers] = useState([]);
+
+  function handleChange(event) {
+    console.log("log value", event.target.value);
+    props.onChange(event.target.value);
+  }
+  useEffect(() => {
+    console.log("fetching mans");
+    fetchManufacturers().then(list => {
+      setManufacturers(list);
+    });
+  }, []);
+
+  return (
+    <select className="filter-dropdown" onChange={e => handleChange(e)}>
+      <option name="default" value="">
+        All manufacturers
+      </option>
+      {manufacturers &&
+        manufacturers.map((manufacturer, index) => {
+          return (
+            <option
+              name={manufacturer.name}
+              value={manufacturer.name}
+              key={index}
+            >
+              {manufacturer.name}
+            </option>
+          );
+        })}
+    </select>
+  );
+};
+
+export default Manufacturer;

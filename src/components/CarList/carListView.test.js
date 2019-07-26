@@ -7,7 +7,11 @@ function setup() {
     error: null,
     loading: false,
     cars: [{ name: "Tesla" }, { name: "BMW" }],
-    dispatch: jest.fn()
+    fetchCars: jest.fn(),
+    filters: {
+      color: "red",
+      manufacturer: "BMW"
+    }
   };
 
   const enzymeWrapper = shallow(<CarListView {...props} />);
@@ -21,7 +25,11 @@ function setup() {
 function setupFailure() {
   const props = {
     error: { message: "error" },
-    dispatch: jest.fn()
+    dispatch: jest.fn(),
+    filters: {
+      color: "red",
+      manufacturer: "BMW"
+    }
   };
 
   const enzymeWrapper = shallow(<CarListView {...props} />);
@@ -47,10 +55,5 @@ describe("CarListView", () => {
   it("should not render car items in case of error", () => {
     const { enzymeWrapper } = setupFailure();
     expect(enzymeWrapper.find("CarItem").length).toBe(0);
-  });
-
-  it("should fire one action when component mounts", () => {
-    const { props } = setup();
-    expect(props.dispatch.mock.instances.length).toBe(1);
   });
 });

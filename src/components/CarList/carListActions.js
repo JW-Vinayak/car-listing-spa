@@ -20,7 +20,21 @@ export const fetchCarsFailure = error => ({
 
 export function fetchCars() {
   return (dispatch, getState) => {
-    console.log("url is", url);
+    let params = {},
+      filters = getState().filters;
+    if (filters.color) {
+      params.color = filters.color;
+    }
+    if (filters.manufacturer) {
+      params.manufacturer = filters.manufacturer;
+    }
+
+    var queryString = Object.keys(params)
+      .map(key => key + "=" + params[key])
+      .join("&");
+    console.log("will fire api with", params, queryString);
+    let url =
+      "http://localhost:3001/cars" + (queryString ? "?" + queryString : "");
     dispatch(fetchCarsBegin());
     console.log("sent request to fetch data");
     return fetch(url)

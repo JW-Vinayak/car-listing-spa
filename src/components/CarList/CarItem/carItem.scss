@@ -12,6 +12,7 @@
     border: solid 1px $off-white;
     padding: $padding-12;
     margin-right: $margin-24;
+    background-color: $off-white;
   }
 
   .car-name {
@@ -32,6 +33,4 @@
       text-decoration: underline;
     }
   }
-
-
 }
