@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './common/styles/styles.scss'
 import CarList from './components/CarList/carListContainer';
 
 function App() {

@@ -1,6 +1,7 @@
 import React from "react";
 import { fetchCars } from "./carListActions";
 import './carListStyle.scss';
+import CarItem from './CarItem/CarItemView';
 
 export default class CarList extends React.Component {
   componentDidMount() {
@@ -20,18 +21,12 @@ export default class CarList extends React.Component {
     }
     console.log("cars", cars);
     return (
-      <ul>
+      <div>
         {cars &&
           cars.map(car => (
-            <li className="car-list" key={car.stockNumber}>
-              <img alt="a car" className="car-image" src={car.pictureUrl} />
-              {`${car.modelName} - ${car.color} - ${
-                car.manufacturerName
-              } - ${car.mileage.number + " " + car.mileage.unit}`}{" "}
-              {}
-            </li>
+             <CarItem car={car}></CarItem>
           ))}
-      </ul>
+      </div>
     );
   }
 }

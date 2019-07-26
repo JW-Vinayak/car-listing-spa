@@ -1,0 +1,37 @@
+.car-item {
+  border: solid 1px $off-white;
+  padding: $padding-12;
+  margin: 10px;
+  display: flex;
+  min-width: 300px;
+  font-size: 0.9em;
+
+  .car-image {
+    width: 60px;
+    height: 40px;
+    border: solid 1px $off-white;
+    padding: $padding-12;
+    margin-right: $margin-24;
+  }
+
+  .car-name {
+    font-size: 1.4em;
+  }
+
+  .car-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .view-details-link {
+    color: $light-orange;
+    text-decoration-line: none;
+    &:hover {
+      color: $dark-orange;
+      text-decoration: underline;
+    }
+  }
+
+
+}
