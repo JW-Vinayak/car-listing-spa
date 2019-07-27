@@ -5,16 +5,23 @@ import Filters from "./components/Filters/filterContainer";
 import Pagination from "./components/Paginator/paginatorContainer";
 import Sorter from "./components/Sorter/sorterContainer";
 import PagingInfo from "./components/PagingInfo/pagingInfoView";
+import Header from "./components/Header/headerView";
+import Footer from "./components/Footer/footerView";
+
 function App() {
   return (
-    <div className="App">
-      <Filters />
-      <div className="car-list">
-        <PagingInfo />
-        <Sorter />
-        <CarList />
-        <Pagination />
+    <div>
+      <Header />
+      <div className="App">
+        <Filters />
+        <div className="car-list">
+          <PagingInfo />
+          <Sorter />
+          <CarList />
+          <Pagination />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

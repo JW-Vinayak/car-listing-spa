@@ -1,0 +1,37 @@
+.header {
+  background: $white;
+  display: flex;
+  justify-content: space-between;
+  color: $dark-gray;
+  border-bottom: 1px solid $off-white;
+  margin-bottom: $margin-8;
+  padding: $padding-8 0;
+  height: 80px;
+
+  .logo {
+    width: 200px;
+    height: auto;
+  }
+
+  .header-menu {
+    display: flex;
+    margin-right: $margin-24;
+    align-self: center;
+  }
+
+  .header-logo {
+    align-self: center;
+    margin-left: $margin-24;
+  }
+
+  .header-link {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 $margin-12;
+    display: block;
+    text-align: center;
+    padding: $padding-8;
+    text-decoration: none;
+    color: $dark-gray;
+  }
+}

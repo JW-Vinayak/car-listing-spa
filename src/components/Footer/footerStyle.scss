@@ -1,0 +1,14 @@
+.footer {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: solid 1px $off-white;
+  margin-top: $margin-24;
+
+  .copyright {
+    font-size: 1em;
+    align-self: center;
+  }
+
+}
