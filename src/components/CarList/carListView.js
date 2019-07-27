@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./carListStyle.scss";
 import CarItem from "./CarItem/CarItemView";
+import * as mileageConstants from '../../common/constants';
 
 export default function CarList(props) {
-  let { filters, fetchCars, pagination } = props;
+  let { filters, fetchCars, pagination, sorter } = props;
+  let modifiedCarList = [];
   console.log("car list props are", props);
   useEffect(() => {
     console.log("calling fetchCars now");
@@ -25,9 +27,17 @@ export default function CarList(props) {
     );
   }
 
+  if (sorter.mileage === mileageConstants.ASCENDING_MILEAGE_SORTING) {
+    modifiedCarList = cars.slice().sort((carA, carB) => carA.mileage.number - carB.mileage.number)
+  } else if (sorter.mileage === mileageConstants.DESCENDING_MILEAGE_SORTING) {
+    modifiedCarList = cars.slice().sort((carA, carB) => carB.mileage.number - carA.mileage.number)
+  } else {
+    modifiedCarList = cars.slice()
+  }
+
   return (
     <div>
-      {cars && cars.map(car => <CarItem key={car.stockNumber} car={car} />)}
+      {modifiedCarList && modifiedCarList.map(car => <CarItem key={car.stockNumber} car={car} />)}
     </div>
   );
 }
