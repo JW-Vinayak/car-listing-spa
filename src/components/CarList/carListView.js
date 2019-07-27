@@ -9,7 +9,7 @@ export default function CarList(props) {
   useEffect(() => {
     console.log("calling fetchCars now");
     fetchCars();
-  }, [filters]);
+  }, [filters, fetchCars]);
 
   const { error, loading, cars } = props;
 

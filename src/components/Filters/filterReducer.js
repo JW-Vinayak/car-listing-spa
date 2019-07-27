@@ -1,4 +1,4 @@
-import { SET_COLOR, SET_MANUFACTURER, SET_FILTER } from "./filterActions";
+import { SET_FILTER } from "./filterActions";
 
 const initialState = {
   color: null,

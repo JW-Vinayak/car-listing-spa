@@ -33,11 +33,10 @@ export function fetchCars() {
       .map(key => key + "=" + params[key])
       .join("&");
     console.log("will fire api with", params, queryString);
-    let url =
-      "http://localhost:3001/cars" + (queryString ? "?" + queryString : "");
+    let urlWithQueryString = url + (queryString ? "?" + queryString : "");
     dispatch(fetchCarsBegin());
     console.log("sent request to fetch data");
-    return fetch(url)
+    return fetch(urlWithQueryString)
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
