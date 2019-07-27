@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 const CarItem = props => {
   let { car } = props;
@@ -18,9 +20,9 @@ const CarItem = props => {
             <span>{car.fuelType} - </span>
             <span>{car.color}</span>
           </div>
-          <a className="view-details-link" href="/#">
+          <Link to={`/car/${car.stockNumber}`} className="view-details-link">
             View Details
-          </a>
+          </Link>
         </div>
       </div>
     );

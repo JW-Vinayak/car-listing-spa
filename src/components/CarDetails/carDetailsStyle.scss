@@ -1,0 +1,38 @@
+section.car-details {
+
+  height: 800px;
+  .image-container {
+    border-bottom: solid 1px $off-white;
+    text-align: center;
+  }
+
+  section {
+    margin-top: $margin-24;
+    display: flex;
+    justify-content: space-around;
+    .car-info {
+      width: 50%;
+      min-width: 400px;
+      color: $dark-gray;
+      .car-name {
+        font-size: 2em;
+        margin-bottom: $margin-24;
+        color: black;
+      }
+
+      .car-info {
+        font-size: 1.2em;
+        margin-bottom: $margin-24;
+      }
+
+    }
+
+    .favorite-car {
+      width: 40%;
+      min-width: 300px;
+    }
+  }
+
+
+
+}

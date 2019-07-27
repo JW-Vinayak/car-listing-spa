@@ -8,6 +8,7 @@ import Sorter from "./components/Sorter/sorterContainer";
 import PagingInfo from "./components/PagingInfo/pagingInfoView";
 import Header from "./components/Header/headerView";
 import Footer from "./components/Footer/footerView";
+import CarDetails from "./components/CarDetails/carDetailsView";
 
 const HomePage = () => {
   return (
@@ -27,8 +28,12 @@ const HomePage = () => {
   );
 };
 
-const CarDetailsPage = () => {
-  return <h1>Car Details Page coming soon!</h1>;
+const CarDetailsPage = (props) => {
+  return <div>
+    <Header></Header>
+    <CarDetails {...props}></CarDetails>
+    <Footer></Footer>
+  </div>;
 };
 
 const PageNotFound = () => {

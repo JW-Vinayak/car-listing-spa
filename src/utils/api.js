@@ -21,6 +21,19 @@ export const fetchManufacturers = () => {
     .catch(error => console.log(error));
 };
 
+
+export const getCarDetails = (stockNumber) => {
+  let url = `http://localhost:3001/cars/${stockNumber}`;
+  console.log('sending fetch request for ', url)
+  return fetch(url)
+    .then(handleErrors)
+    .then(res => res.json())
+    .then(json => {
+      return json.car;
+    })
+    .catch(error => console.log(error));
+}
+
 function handleErrors(response) {
   if (!response.ok) {
     throw Error(response.statusText);
