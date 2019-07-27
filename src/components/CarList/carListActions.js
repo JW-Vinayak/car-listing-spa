@@ -1,7 +1,7 @@
 export const FETCH_CARS_BEGIN = "FETCH_CARS_BEGIN";
 export const FETCH_CARS_SUCCESS = "FETCH_CARS_SUCCESS";
 export const FETCH_CARS_FAILURE = "FETCH_CARS_FAILURE";
-export const SET_TOTAL_PAGES = "SET_TOTAL_PAGES";
+export const SET_RECORDS_INFO = "SET_RECORDS_INFO";
 
 const url = "http://localhost:3001/cars";
 
@@ -19,9 +19,9 @@ export const fetchCarsFailure = error => ({
   payload: { error }
 });
 
-export const setTotalPages = totalPages => ({
-  type: SET_TOTAL_PAGES,
-  payload: { totalPages }
+export const setRecordInfo = recordsInfo => ({
+  type: SET_RECORDS_INFO,
+  payload: { recordsInfo }
 });
 
 export function fetchCars() {
@@ -52,7 +52,11 @@ export function fetchCars() {
       .then(json => {
         console.log("data is fetched", json);
         dispatch(fetchCarsSuccess(json.cars));
-        dispatch(setTotalPages(json.totalPageCount));
+        dispatch(setRecordInfo({
+          totalPages: json.totalPageCount,
+          totalRecords: json.totalCarsCount
+        }));
+        console.log('data after dispatch', getState())
         return json.cars;
       })
       .catch(error => dispatch(fetchCarsFailure(error)));

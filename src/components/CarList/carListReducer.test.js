@@ -7,7 +7,8 @@ describe("car list reducer", () => {
       list: [],
       loading: false,
       error: null,
-      totalPages: 0
+      totalPages: 0,
+      totalRecords: 0
     });
   });
 
@@ -20,7 +21,8 @@ describe("car list reducer", () => {
       list: [],
       loading: true,
       error: null,
-      totalPages: 0
+      totalPages: 0,
+      totalRecords: 0
     });
   });
 

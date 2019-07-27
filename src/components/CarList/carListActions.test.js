@@ -42,7 +42,8 @@ describe("async actions", () => {
           fuelType: "Petrol"
         }
       ],
-      totalPageCount: 1
+      totalPageCount: 1,
+      totalCarsCount: 9
     };
     fetchMock.getOnce("http://localhost:3001/cars?color=red&page=1", {
       body: carsResponse,
@@ -55,13 +56,17 @@ describe("async actions", () => {
         type: actions.FETCH_CARS_SUCCESS,
         payload: { cars: carsResponse.cars }
       },
-      { type: actions.SET_TOTAL_PAGES, payload: { totalPages: 1 } }
+      {
+        type: actions.SET_RECORDS_INFO,
+        payload: { recordsInfo: { totalPages: 1, totalRecords: 9 } }
+      }
     ];
     const store = mockStore({
       cars: [],
       filters: { color: "red" },
       pagination: { currentPage: 1 },
-      totalPages: 0
+      totalPages: 0,
+      totalRecords: 0
     });
     return store.dispatch(actions.fetchCars()).then(() => {
       console.log("get actions output", store.getActions(), expectedActions);

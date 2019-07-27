@@ -2,7 +2,7 @@ import React from "react";
 
 const Paginator = props => {
   let { currentPage, totalPages, setPage } = props;
-
+  console.log('nav props are', props);
   const setCurrentPage = pageNumber => {
     if (pageNumber < 1 || pageNumber > totalPages) {
       return false;
