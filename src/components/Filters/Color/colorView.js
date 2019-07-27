@@ -26,7 +26,7 @@ class Color extends React.Component {
 
   render() {
     return (
-      this.state.colors.length && (
+      this.state.colors && (
         <select
           className="filter-dropdown"
           onChange={e => this.handleChange(e)}

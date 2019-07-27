@@ -3,8 +3,8 @@ import ColorFilter from "./Color/colorView";
 import ManufacturerFilter from "./Manufacturer/manufacturerView";
 
 class Filter extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       color: null,
       manufacturer: null
