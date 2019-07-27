@@ -1,13 +1,15 @@
 import {
   FETCH_CARS_BEGIN,
   FETCH_CARS_SUCCESS,
-  FETCH_CARS_FAILURE
+  FETCH_CARS_FAILURE,
+  SET_TOTAL_PAGES
 } from "./carListActions";
 
 const initialState = {
   list: [],
   loading: false,
-  error: null
+  error: null,
+  totalPage: 0
 };
 
 export default function carListReducer(state = initialState, action) {
@@ -32,6 +34,12 @@ export default function carListReducer(state = initialState, action) {
         loading: false,
         error: action.payload.error,
         list: []
+      };
+
+    case SET_TOTAL_PAGES:
+      return {
+        ...state,
+        totalPages: action.payload.totalPages
       };
 
     default:

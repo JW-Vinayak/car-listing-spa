@@ -2,11 +2,15 @@ import React from "react";
 import "./styles/styles.scss";
 import CarList from "./components/CarList/carListContainer";
 import Filters from "./components/Filters/filterContainer";
+import Pagination from "./components/Paginator/paginatorContainer";
 function App() {
   return (
     <div className="App">
       <Filters />
-      <CarList />
+      <div className="car-list">
+        <CarList />
+        <Pagination />
+      </div>
     </div>
   );
 }

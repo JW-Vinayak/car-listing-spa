@@ -43,12 +43,7 @@
   }
 
   .view-details-link {
-    color: $light-orange;
-    text-decoration-line: none;
-    &:hover {
-      color: $dark-orange;
-      text-decoration: underline;
-    }
+    @include link;
   }
 
   .no-view-details-link {

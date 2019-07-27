@@ -4,12 +4,12 @@ import "./carListStyle.scss";
 import CarItem from "./CarItem/CarItemView";
 
 export default function CarList(props) {
-  let { filters, fetchCars } = props;
+  let { filters, fetchCars, pagination } = props;
   console.log("car list props are", props);
   useEffect(() => {
     console.log("calling fetchCars now");
     fetchCars();
-  }, [filters, fetchCars]);
+  }, [filters, fetchCars, pagination]);
 
   const { error, loading, cars } = props;
 
@@ -26,7 +26,7 @@ export default function CarList(props) {
   }
 
   return (
-    <div className="car-list">
+    <div>
       {cars && cars.map(car => <CarItem key={car.stockNumber} car={car} />)}
     </div>
   );

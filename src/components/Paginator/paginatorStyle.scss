@@ -1,0 +1,15 @@
+.pagination {
+  .first-link,
+  .prev-link,
+  .next-link,
+  .last-link {
+    @include link;
+  }
+  list-style: none;
+  text-align: center;
+  & > li {
+    margin: $margin-8 $margin-12;
+  display: inline-block;
+
+  }
+}

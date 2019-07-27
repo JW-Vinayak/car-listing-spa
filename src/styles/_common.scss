@@ -1,3 +1,14 @@
+// mixins
+
+@mixin link {
+  color: $light-orange;
+  text-decoration-line: none;
+  &:hover {
+    color: $dark-orange;
+    text-decoration: underline;
+  }
+}
+
 // Reset spacing for elements
 * {
   padding: 0;

@@ -1,6 +1,7 @@
 export const FETCH_CARS_BEGIN = "FETCH_CARS_BEGIN";
 export const FETCH_CARS_SUCCESS = "FETCH_CARS_SUCCESS";
 export const FETCH_CARS_FAILURE = "FETCH_CARS_FAILURE";
+export const SET_TOTAL_PAGES = "SET_TOTAL_PAGES";
 
 const url = "http://localhost:3001/cars";
 
@@ -18,15 +19,24 @@ export const fetchCarsFailure = error => ({
   payload: { error }
 });
 
+export const setTotalPages = totalPages => ({
+  type: SET_TOTAL_PAGES,
+  payload: { totalPages }
+});
+
 export function fetchCars() {
   return (dispatch, getState) => {
     let params = {},
-      filters = getState().filters;
+      filters = getState().filters,
+      pagination = getState().pagination;
     if (filters.color) {
       params.color = filters.color;
     }
     if (filters.manufacturer) {
       params.manufacturer = filters.manufacturer;
+    }
+    if (pagination.currentPage) {
+      params.page = pagination.currentPage;
     }
 
     var queryString = Object.keys(params)
@@ -42,6 +52,7 @@ export function fetchCars() {
       .then(json => {
         console.log("data is fetched", json);
         dispatch(fetchCarsSuccess(json.cars));
+        dispatch(setTotalPages(json.totalPageCount));
         return json.cars;
       })
       .catch(error => dispatch(fetchCarsFailure(error)));
