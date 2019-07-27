@@ -33,4 +33,9 @@ body {
   font-size: 1em;
   border: 0;
   box-shadow: none;
+  cursor: pointer;
+  outline: none;
+  &:active {
+    background-color: $dark-orange;
+  }
 }

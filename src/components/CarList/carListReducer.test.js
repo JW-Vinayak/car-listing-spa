@@ -6,7 +6,8 @@ describe("car list reducer", () => {
     expect(reducer(undefined, {})).toEqual({
       list: [],
       loading: false,
-      error: null
+      error: null,
+      totalPages: 0
     });
   });
 
@@ -18,7 +19,8 @@ describe("car list reducer", () => {
     ).toEqual({
       list: [],
       loading: true,
-      error: null
+      error: null,
+      totalPages: 0
     });
   });
 

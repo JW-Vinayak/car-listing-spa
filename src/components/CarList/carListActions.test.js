@@ -31,7 +31,7 @@ describe("async actions", () => {
   });
 
   it("creates FETCH_CARS_SUCCESS when fetching cars has been done", () => {
-    let cars = {
+    let carsResponse = {
       cars: [
         {
           stockNumber: 10019,
@@ -41,20 +41,30 @@ describe("async actions", () => {
           mileage: { number: 181526, unit: "km" },
           fuelType: "Petrol"
         }
-      ]
+      ],
+      totalPageCount: 1
     };
-    fetchMock.getOnce("http://localhost:3001/cars?color=red", {
-      body: cars,
+    fetchMock.getOnce("http://localhost:3001/cars?color=red&page=1", {
+      body: carsResponse,
       headers: { "content-type": "application/json" }
     });
 
     const expectedActions = [
       { type: actions.FETCH_CARS_BEGIN },
-      { type: actions.FETCH_CARS_SUCCESS, payload: cars }
+      {
+        type: actions.FETCH_CARS_SUCCESS,
+        payload: { cars: carsResponse.cars }
+      },
+      { type: actions.SET_TOTAL_PAGES, payload: { totalPages: 1 } }
     ];
-    const store = mockStore({ cars: [], filters: { color: "red" } });
-
+    const store = mockStore({
+      cars: [],
+      filters: { color: "red" },
+      pagination: { currentPage: 1 },
+      totalPages: 0
+    });
     return store.dispatch(actions.fetchCars()).then(() => {
+      console.log("get actions output", store.getActions(), expectedActions);
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

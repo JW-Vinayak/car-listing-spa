@@ -9,7 +9,7 @@ const initialState = {
   list: [],
   loading: false,
   error: null,
-  totalPage: 0
+  totalPages: 0
 };
 
 export default function carListReducer(state = initialState, action) {

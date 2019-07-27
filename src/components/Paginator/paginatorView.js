@@ -5,7 +5,7 @@ const Paginator = props => {
 
   const setCurrentPage = pageNumber => {
     if (pageNumber < 1 || pageNumber > totalPages) {
-      return;
+      return false;
     }
     setPage(pageNumber);
   };
