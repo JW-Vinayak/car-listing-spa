@@ -18,7 +18,11 @@ export default function CarList(props) {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="car-list">
+        { [...Array(10)].map((e, i) => <CarItem key={i} car={{}} />)}
+      </div>
+    );
   }
 
   return (

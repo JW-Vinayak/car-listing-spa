@@ -2,25 +2,41 @@ import React from "react";
 
 const CarItem = props => {
   let { car } = props;
-  return (
-    <div className="car-item" key={car.stockNumber}>
-      <img alt="a car" className="car-image" src={car.pictureUrl} />
-      <div className="car-info">
-        <h3 className="car-name">{car.modelName}</h3>
-        <div className="car-details">
-          <span>Stock # {car.stockNumber} - </span>
-          <span>
-            {car.mileage.number} {car.mileage.unit.toUpperCase()} -{" "}
-          </span>
-          <span>{car.fuelType} - </span>
-          <span>{car.color}</span>
+  let content;
+
+  if (car.modelName) {
+    content = (
+      <div className="car-item" key={car.stockNumber}>
+        <img alt="a car" className="car-image" src={car.pictureUrl} />
+        <div className="car-info">
+          <h3 className="car-name">{car.modelName}</h3>
+          <div className="car-details">
+            <span>Stock # {car.stockNumber} - </span>
+            <span>
+              {car.mileage.number} {car.mileage.unit.toUpperCase()} -{" "}
+            </span>
+            <span>{car.fuelType} - </span>
+            <span>{car.color}</span>
+          </div>
+          <a className="view-details-link" href="/#">
+            View Details
+          </a>
         </div>
-        <a className="view-details-link" href="/#">
-          View Details
-        </a>
       </div>
-    </div>
-  );
+    );
+  } else {
+    content = (
+      <div className="car-item" key={car.stockNumber}>
+        <div className="empty-box" />
+        <div className="car-info">
+          <div className="no-car-name" />
+          <div className="no-car-details" />
+          <div className="no-view-details-link" />
+        </div>
+      </div>
+    );
+  }
+  return content;
 };
 
 export default CarItem;

@@ -12,6 +12,10 @@
     border: solid 1px $off-white;
     padding: $padding-12;
     margin-right: $margin-24;
+  }
+
+  .empty-box {
+    @extend .car-image;
     background-color: $off-white;
   }
 
@@ -19,10 +23,23 @@
     font-size: 1.4em;
   }
 
+  .no-car-name {
+    background-color: $off-white;
+    width: 120px;
+    height: 20px;
+  }
+
   .car-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .no-car-details {
+    // @extend .car-info;
+    background-color: $off-white;
+    width: 200px;
+    height: 20px;
   }
 
   .view-details-link {
@@ -32,5 +49,11 @@
       color: $dark-orange;
       text-decoration: underline;
     }
+  }
+
+  .no-view-details-link {
+    background-color: $off-white;
+    width: 80px;
+    height: 20px;
   }
 }
