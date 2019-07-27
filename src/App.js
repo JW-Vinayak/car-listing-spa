@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import "./styles/styles.scss";
 import CarList from "./components/CarList/carListContainer";
 import Filters from "./components/Filters/filterContainer";
@@ -8,7 +9,7 @@ import PagingInfo from "./components/PagingInfo/pagingInfoView";
 import Header from "./components/Header/headerView";
 import Footer from "./components/Footer/footerView";
 
-function App() {
+const HomePage = () => {
   return (
     <div>
       <Header />
@@ -22,6 +23,26 @@ function App() {
         </div>
       </div>
       <Footer />
+    </div>
+  );
+};
+
+const CarDetailsPage = () => {
+  return <h1>Car Details Page coming soon!</h1>;
+};
+
+const PageNotFound = () => {
+  return <h1>404 / Page Not Found</h1>;
+};
+
+function App() {
+  return (
+    <div>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/car/:stockNumber" component={CarDetailsPage} />
+        <Route path="*" component={PageNotFound} />
+      </Switch>
     </div>
   );
 }
