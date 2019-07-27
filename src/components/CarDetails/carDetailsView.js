@@ -1,5 +1,6 @@
 import React from "react";
 import { getCarDetails } from "../../utils/api";
+import SetFavoriteCarView from "./FavoriteCar/favoriteCarView";
 
 class CarDetails extends React.Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class CarDetails extends React.Component {
             </p>
           </div>
           <div className="favorite-car">
-            Mark this car as favorite
+            <SetFavoriteCarView {...car}></SetFavoriteCarView>
           </div>
         </section>
       </section>

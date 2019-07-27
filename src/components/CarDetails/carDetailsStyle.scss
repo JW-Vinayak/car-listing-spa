@@ -28,8 +28,13 @@ section.car-details {
     }
 
     .favorite-car {
-      width: 40%;
+      width: 30%;
       min-width: 300px;
+      padding: $padding-24;
+      border: 1px solid $off-white;
+      color: $dark-gray;
+      margin-right: $margin-8;
+      position: relative;
     }
   }
 
