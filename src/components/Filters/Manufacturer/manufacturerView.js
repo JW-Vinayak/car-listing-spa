@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchManufacturers } from "../../../utils/api";
+import PropTypes from "prop-types";
 
 const Manufacturer = props => {
   let [manufacturers, setManufacturers] = useState([]);
@@ -43,5 +44,9 @@ const Manufacturer = props => {
     </select>
   );
 };
+
+Manufacturer.propTypes = {
+  onChange: PropTypes.func.isRequired
+}
 
 export default Manufacturer;

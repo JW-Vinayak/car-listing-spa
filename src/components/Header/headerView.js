@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../../assets/company-logo.png'
 
-const Header = (props) => (
+const Header = () => (
   <header className='header'>
     <div className='header-logo'>
       <img

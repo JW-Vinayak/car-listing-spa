@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -16,11 +17,16 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <div class="error error-box-small">Couldn't fetch data from server</div>;
+      return (
+        <div class="error error-box-small">Couldn't fetch data from server</div>
+      );
     }
-
     return this.props.children;
   }
 }
 
-export default ErrorBoundary
+ErrorBoundary.propTypes = {
+  children: PropTypes.element.isRequired
+};
+
+export default ErrorBoundary;

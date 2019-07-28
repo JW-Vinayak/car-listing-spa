@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const PagingInfo = props => {
   const { currentPage, totalPages, totalRecords } = props;
@@ -18,7 +19,7 @@ const PagingInfo = props => {
   if (currentPage === totalPages) {
     toPage = fromPage + (totalRecords % 10) - 1;
   } else {
-    toPage = fromPage + 9;
+    toPage = fromPage + (recordsPerPage - 1);
   }
 
   return (
@@ -29,6 +30,12 @@ const PagingInfo = props => {
       </div>
     </div>
   );
+};
+
+PagingInfo.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  totalRecords: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({

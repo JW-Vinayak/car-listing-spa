@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 
 const Paginator = props => {
   let { currentPage, totalPages, setPage } = props;
@@ -38,5 +40,11 @@ const Paginator = props => {
     </ul>
   );
 };
+
+Paginator.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired
+}
 
 export default Paginator;

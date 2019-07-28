@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const CarItem = props => {
   let { car } = props;
@@ -39,6 +39,10 @@ const CarItem = props => {
     );
   }
   return content;
+};
+
+CarItem.propTypes = {
+  car: PropTypes.object.isRequired
 };
 
 export default CarItem;

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./carListStyle.scss";
 import CarItem from "./CarItem/CarItemView";
-import * as mileageConstants from '../../common/constants';
+import * as mileageConstants from "../../common/constants";
 
 export default function CarList(props) {
   let { filters, fetchCars, pagination, sorter } = props;
@@ -16,32 +16,50 @@ export default function CarList(props) {
   const { error, loading, cars } = props;
 
   if (error) {
-    return <div class="error error-box">Couldn't load car list from server at this moment, please try again later.</div>;
+    return (
+      <div class="error error-box">
+        Couldn't load car list from server at this moment, please try again
+        later.
+      </div>
+    );
   }
 
   if (loading) {
     return (
       <div className="car-list">
-        { [...Array(10)].map((e, i) => <CarItem key={i} car={{}} />)}
+        {[...Array(10)].map((e, i) => (
+          <CarItem key={i} car={{}} />
+        ))}
       </div>
     );
   }
 
   if (sorter.mileage === mileageConstants.ASCENDING_MILEAGE_SORTING) {
-    modifiedCarList = cars.slice().sort((carA, carB) => carA.mileage.number - carB.mileage.number)
+    modifiedCarList = cars
+      .slice()
+      .sort((carA, carB) => carA.mileage.number - carB.mileage.number);
   } else if (sorter.mileage === mileageConstants.DESCENDING_MILEAGE_SORTING) {
-    modifiedCarList = cars.slice().sort((carA, carB) => carB.mileage.number - carA.mileage.number)
+    modifiedCarList = cars
+      .slice()
+      .sort((carA, carB) => carB.mileage.number - carA.mileage.number);
   } else {
-    modifiedCarList = cars.slice()
+    modifiedCarList = cars.slice();
   }
 
   return (
     <div className="car-list">
-      {modifiedCarList && modifiedCarList.map(car => <CarItem key={car.stockNumber} car={car} />)}
+      {modifiedCarList &&
+        modifiedCarList.map(car => <CarItem key={car.stockNumber} car={car} />)}
     </div>
   );
 }
 
 CarList.propTypes = {
-  filters: PropTypes.object
+  filters: PropTypes.object.isRequired,
+  fetchCars: PropTypes.func.isRequired,
+  pagination: PropTypes.object.isRequired,
+  sorter: PropTypes.object.isRequired,
+  error: PropTypes.object,
+  loading: PropTypes.bool.isRequired,
+  cars: PropTypes.array.isRequired
 };

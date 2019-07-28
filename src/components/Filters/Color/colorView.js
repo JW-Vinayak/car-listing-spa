@@ -1,5 +1,7 @@
 import React from "react";
 import { fetchColors } from "../../../utils/api";
+import PropTypes from "prop-types";
+
 class Color extends React.Component {
   constructor(props) {
     super(props);
@@ -11,18 +13,19 @@ class Color extends React.Component {
   }
 
   componentDidMount() {
-    fetchColors().then(colors => {
-      console.log("received colors", colors);
-      this.setState({
-        colors: colors
-      });
-    })
-    .catch(e => {
-      console.log('error in color', e);
-      this.setState({
-        error: true
+    fetchColors()
+      .then(colors => {
+        console.log("received colors", colors);
+        this.setState({
+          colors: colors
+        });
       })
-    })
+      .catch(e => {
+        console.log("error in color", e);
+        this.setState({
+          error: true
+        });
+      });
   }
 
   handleChange(event) {
@@ -32,7 +35,7 @@ class Color extends React.Component {
   }
 
   render() {
-    if (this.state.error){
+    if (this.state.error) {
       throw new Error();
     }
     return (
@@ -57,24 +60,8 @@ class Color extends React.Component {
   }
 }
 
-// const Color = (props) => {
-//     let { color, setColor, colors } = props;
-//     let [currentColor, setCurrentColor] = useState('')
-//     function handleChange(event) {
-//         console.log('log value', event.target.value);
-//         setColor(event.target.value);
-//         setCurrentColor(event.target.value);
-//     }
-//     useEffect(() => {
-//         console.log('fetching colors')
-//         fetchColors().then(list => {
-//          color
-//         });
-
-//     }, [color])
-
-//         let  { error, loading, colors } = props;
-
-//   }
+Color.propTypes = {
+  onChange: PropTypes.func.isRequired
+};
 
 export default Color;

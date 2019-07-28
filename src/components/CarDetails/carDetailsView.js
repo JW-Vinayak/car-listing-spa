@@ -1,6 +1,7 @@
 import React from "react";
 import { getCarDetails } from "../../utils/api";
 import SetFavoriteCarView from "./FavoriteCar/favoriteCarView";
+import PropTypes from "prop-types";
 
 class CarDetails extends React.Component {
   constructor(props) {
@@ -24,8 +25,8 @@ class CarDetails extends React.Component {
       .catch(e => {
         this.setState({
           error: true
-        })
-      })
+        });
+      });
   }
 
   render() {
@@ -76,5 +77,11 @@ class CarDetails extends React.Component {
     );
   }
 }
+
+CarDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.object.isRequired
+  })
+};
 
 export default CarDetails;

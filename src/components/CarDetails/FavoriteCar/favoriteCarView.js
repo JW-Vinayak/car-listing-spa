@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import * as localStorage from '../../../utils/localStorage';
-
+import PropTypes from 'prop-types';
 
 const FavoriteCarSetting = props => {
   let { stockNumber } = props;
@@ -46,5 +46,9 @@ const FavoriteCarSetting = props => {
 
   return content;
 };
+
+FavoriteCarSetting.propTypes = {
+  stockNumber: PropTypes.number.isRequired
+}
 
 export default FavoriteCarSetting;

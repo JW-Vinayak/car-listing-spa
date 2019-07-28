@@ -2,6 +2,7 @@ import React from "react";
 import ColorFilter from "./Color/colorView";
 import ManufacturerFilter from "./Manufacturer/manufacturerView";
 import { withErrorBoundary } from "../../utils/composition";
+import PropTypes from "prop-types";
 
 class Filter extends React.Component {
   constructor() {
@@ -55,5 +56,10 @@ class Filter extends React.Component {
     );
   }
 }
+
+Filter.propTypes = {
+  setPageNumber: PropTypes.func.isRequired,
+  setFilter: PropTypes.func.isRequired
+};
 
 export default Filter;
