@@ -4,11 +4,12 @@
     .filter-name {
       font-size: 0.9em;
       display: block;
+      margin-bottom: $margin-8;
     }
   }
 
   .apply-button {
-    margin: $margin-8;
+    margin: $margin-8 0;
     right: 0px;
     float: right;
   }

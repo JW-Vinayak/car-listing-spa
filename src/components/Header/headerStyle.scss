@@ -39,5 +39,8 @@
 @media (min-width: 320px) and (max-width: 480px) {
   .header {
     justify-content: center;
+    .header-menu {
+      margin: $margin-8 0 0 0;
+    }
   }
 }
