@@ -13,12 +13,12 @@ const Paginator = props => {
   return (
     <ul className="pagination">
       <li>
-        <a className="first-link" onClick={() => setCurrentPage(1)}>
+        <a href="# " className="first-link" onClick={() => setCurrentPage(1)}>
           First
         </a>
       </li>
       <li>
-        <a className="prev-link" onClick={() => setCurrentPage(currentPage - 1)}>
+        <a href="# " className="prev-link" onClick={() => setCurrentPage(currentPage - 1)}>
           Previous
         </a>
       </li>
@@ -26,12 +26,12 @@ const Paginator = props => {
         Page {currentPage} of {totalPages}
       </li>
       <li>
-        <a className="next-link" onClick={() => setCurrentPage(currentPage + 1)}>
+        <a href="# " className="next-link" onClick={() => setCurrentPage(currentPage + 1)}>
           Next
         </a>
       </li>
       <li>
-        <a className="last-link" onClick={() => setCurrentPage(totalPages)}>
+        <a href="# " className="last-link" onClick={() => setCurrentPage(totalPages)}>
           Last
         </a>
       </li>

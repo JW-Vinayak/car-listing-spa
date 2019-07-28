@@ -11,7 +11,7 @@
     flex-grow: 1;
   }
   .filters {
-    border: 1px solid $off-white;
+    @include off-white-border;
     min-width: 300px;
     height: 170px;
     padding: $padding-24;

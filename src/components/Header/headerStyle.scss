@@ -1,17 +1,15 @@
 .header {
-  background: $white;
   display: flex;
   justify-content: space-between;
   align-content: center;
   flex-wrap: wrap;
-  color: $dark-gray;
-  border-bottom: 1px solid $off-white;
+  @include off-white-border-bottom;
   margin-bottom: $margin-8;
   padding: $padding-8 0;
-  height: 80px;
+  height: $header-height;
 
   .logo {
-    width: 200px;
+    width: $logo-width;
     height: auto;
   }
 
@@ -27,7 +25,7 @@
   }
 
   .header-link {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
     margin: 0 $margin-12;
     display: block;

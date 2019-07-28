@@ -9,6 +9,18 @@
   }
 }
 
+@mixin off-white-border($border-size: 1px){
+  border: solid $border-size $off-white;
+}
+
+@mixin off-white-border-bottom($border-size: 1px){
+  border-bottom: solid $border-size $off-white;
+}
+
+@mixin off-white-border-top($border-size: 1px){
+  border-top: solid $border-size $off-white;
+}
+
 // Reset spacing for elements
 * {
   padding: 0;
@@ -28,8 +40,8 @@ body {
 
 .button {
   background-color: $light-orange;
-  height: 32px;
-  width: 128px;
+  height: $button-height;
+  width: $button-width;
   color: $white;
   font-size: 1em;
   border: 0;
@@ -46,6 +58,7 @@ body {
   height: 35px;
   font-size: 1em;
   background-color: $white;
+  color: $dark-gray;
 }
 
 .link {
@@ -58,6 +71,7 @@ body {
 }
 
 .error-box {
+  clear: both;
   text-align: center;
   border: 1px solid $off-white;
   padding: $padding-24;

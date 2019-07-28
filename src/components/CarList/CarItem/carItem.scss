@@ -1,5 +1,7 @@
+$placeholder-height: 20px;
+
 .car-item {
-  border: solid 1px $off-white;
+  @include off-white-border;
   padding: $padding-12;
   margin: $margin-8 0;
   display: flex;
@@ -9,9 +11,9 @@
   .car-image {
     width: 60px;
     height: 40px;
-    border: solid 1px $off-white;
     padding: $padding-12;
     margin-right: $margin-24;
+    @include off-white-border;
   }
 
   .empty-box {
@@ -26,7 +28,7 @@
   .no-car-name {
     background-color: $off-white;
     width: 120px;
-    height: 20px;
+    height: $placeholder-height;
   }
 
   .car-info {
@@ -36,10 +38,9 @@
   }
 
   .no-car-details {
-    // @extend .car-info;
     background-color: $off-white;
     width: 200px;
-    height: 20px;
+    height: $placeholder-height;
   }
 
   .view-details-link {
@@ -49,6 +50,6 @@
   .no-view-details-link {
     background-color: $off-white;
     width: 80px;
-    height: 20px;
+    height: $placeholder-height;
   }
 }

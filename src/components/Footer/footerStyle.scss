@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-top: solid 1px $off-white;
+  @include off-white-border-top;
   margin-top: $margin-24;
 
   .copyright {
