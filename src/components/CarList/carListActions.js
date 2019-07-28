@@ -1,9 +1,9 @@
+import { getCarList } from "../../utils/api";
+
 export const FETCH_CARS_BEGIN = "FETCH_CARS_BEGIN";
 export const FETCH_CARS_SUCCESS = "FETCH_CARS_SUCCESS";
 export const FETCH_CARS_FAILURE = "FETCH_CARS_FAILURE";
 export const SET_RECORDS_INFO = "SET_RECORDS_INFO";
-
-const url = "http://localhost:3001/cars";
 
 export const fetchCarsBegin = () => ({
   type: FETCH_CARS_BEGIN
@@ -43,29 +43,22 @@ export function fetchCars() {
       .map(key => key + "=" + params[key])
       .join("&");
     console.log("will fire api with", params, queryString);
-    let urlWithQueryString = url + (queryString ? "?" + queryString : "");
     dispatch(fetchCarsBegin());
     console.log("sent request to fetch data");
-    return fetch(urlWithQueryString)
-      .then(handleErrors)
-      .then(res => res.json())
+
+    getCarList(queryString)
       .then(json => {
         console.log("data is fetched", json);
         dispatch(fetchCarsSuccess(json.cars));
-        dispatch(setRecordInfo({
-          totalPages: json.totalPageCount,
-          totalRecords: json.totalCarsCount
-        }));
-        console.log('data after dispatch', getState())
+        dispatch(
+          setRecordInfo({
+            totalPages: json.totalPageCount,
+            totalRecords: json.totalCarsCount
+          })
+        );
+        console.log("data after dispatch", getState());
         return json.cars;
       })
       .catch(error => dispatch(fetchCarsFailure(error)));
   };
-}
-
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
 }

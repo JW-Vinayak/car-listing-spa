@@ -3,6 +3,7 @@ import { fetchManufacturers } from "../../../utils/api";
 
 const Manufacturer = props => {
   let [manufacturers, setManufacturers] = useState([]);
+  let [error, setError] = useState(false);
 
   function handleChange(event) {
     console.log("log value", event.target.value);
@@ -12,8 +13,15 @@ const Manufacturer = props => {
     console.log("fetching mans");
     fetchManufacturers().then(list => {
       setManufacturers(list);
-    });
+    })
+    .catch(e => {
+      setError(true);
+    })
   }, []);
+
+  if (error) {
+    throw new Error();
+  }
 
   return (
     <select className="filter-dropdown" onChange={e => handleChange(e)}>

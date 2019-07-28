@@ -4,7 +4,8 @@ class Color extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      colors: []
+      colors: [],
+      error: false
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -15,7 +16,13 @@ class Color extends React.Component {
       this.setState({
         colors: colors
       });
-    });
+    })
+    .catch(e => {
+      console.log('error in color', e);
+      this.setState({
+        error: true
+      })
+    })
   }
 
   handleChange(event) {
@@ -25,6 +32,9 @@ class Color extends React.Component {
   }
 
   render() {
+    if (this.state.error){
+      throw new Error();
+    }
     return (
       this.state.colors && (
         <select
