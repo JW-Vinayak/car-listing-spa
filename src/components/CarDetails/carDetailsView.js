@@ -38,7 +38,7 @@ class CarDetails extends React.Component {
       );
     }
     if (!this.state.carDetails) {
-      return <div className="error error-box">No data found for this car</div>;
+      return <div className="error-box">Data is Loading...</div>;
     }
     let car = this.state.carDetails;
     return (
