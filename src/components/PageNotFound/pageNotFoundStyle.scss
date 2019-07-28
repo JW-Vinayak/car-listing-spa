@@ -1,0 +1,23 @@
+.page-not-found {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img.logo {
+    width: 200px;
+    height: auto;
+  }
+
+  header {
+    font-size: 3em;
+    font-weight: bold;
+    margin:$margin-24 0;
+  }
+
+  .text {
+    font-size: 1.2em;
+    margin: $margin-12 0;
+  }
+}

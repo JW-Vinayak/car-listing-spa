@@ -9,7 +9,7 @@ import PagingInfo from "./components/PagingInfo/pagingInfoView";
 import Header from "./components/Header/headerView";
 import Footer from "./components/Footer/footerView";
 import CarDetails from "./components/CarDetails/carDetailsView";
-
+import PageNotFoundView from './components/PageNotFound/pageNotFoundView';
 const HomePage = () => {
   return (
     <div>
@@ -37,7 +37,11 @@ const CarDetailsPage = (props) => {
 };
 
 const PageNotFound = () => {
-  return <h1>404 / Page Not Found</h1>;
+  return <div>
+    <Header></Header>
+    <PageNotFoundView></PageNotFoundView>
+    <Footer></Footer>
+  </div>;
 };
 
 function App() {

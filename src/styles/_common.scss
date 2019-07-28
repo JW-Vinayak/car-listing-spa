@@ -18,6 +18,7 @@
 body {
   background: $white;
   font-family: "Roboto", sans-serif;
+  color: $dark-gray;
 }
 
 .App {
@@ -45,4 +46,8 @@ body {
   height: 35px;
   font-size: 1em;
   background-color: $white;
+}
+
+.link {
+  @include link;
 }
