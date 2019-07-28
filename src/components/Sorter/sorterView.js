@@ -17,7 +17,7 @@ const Sorter = (props) => {
 
   return (
     <div className="sorter">
-      <p class="sort-by-text">Sort by</p>
+      <p className="sort-by-text">Sort by</p>
       <select className="filter-dropdown sort-dropdown" value={sortOrder} onChange={(e) => handleChange(e)}>
         <option value={NO_MILEAGE_SORTING}>None</option>
         <option value={ASCENDING_MILEAGE_SORTING}>Mileage Ascending</option>

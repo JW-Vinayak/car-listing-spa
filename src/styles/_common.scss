@@ -50,10 +50,11 @@ body {
 
 .link {
   @include link;
+  cursor: pointer;
 }
 
 .error {
-  color: red;
+  color: $red;
 }
 
 .error-box {

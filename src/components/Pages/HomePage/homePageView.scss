@@ -20,8 +20,9 @@
 
   .paging-info {
     float: left;
+    margin-bottom: $margin-24;
     .text {
-      font-size: 1.4em;
+      font-size: 1.2em;
       padding: 0 $padding-8 $padding-8 0;
     }
     .bold {

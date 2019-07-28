@@ -23,8 +23,8 @@ const PagingInfo = props => {
 
   return (
     <div className="paging-info">
-      <div class="text bold">Available Cars</div>
-      <div class="text">
+      <div className="text bold">Available Cars</div>
+      <div className="text">
         Showing {fromPage}-{toPage} of {totalRecords} results
       </div>
     </div>
