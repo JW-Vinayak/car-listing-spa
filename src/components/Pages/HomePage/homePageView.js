@@ -9,12 +9,14 @@ import { WithHeaderAndFooter } from "../../../utils/composition";
 export const HomePage = () => {
   return (
     <WithHeaderAndFooter className="App">
-      <Filters />
-      <div className="car-list">
-        <PagingInfo />
-        <Sorter />
-        <CarList />
-        <Pagination />
+      <div className="home-page-content">
+        <Filters />
+        <div className="car-list-area">
+          <PagingInfo />
+          <Sorter />
+          <CarList />
+          <Pagination />
+        </div>
       </div>
     </WithHeaderAndFooter>
   );

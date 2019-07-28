@@ -1,5 +1,6 @@
 @import "./variable";
 @import "./common";
+@import "../components/Pages/HomePage/homePageView";
 @import "../components/CarList/carListStyle";
 @import "../components/CarList/CarItem/carItem";
 @import "../components/Filters/filterStyle";
@@ -10,3 +11,4 @@
 @import "../components/CarDetails/carDetailsStyle";
 @import "../components/CarDetails/FavoriteCar/favoriteCarStyle";
 @import "../components/PageNotFound/pageNotFoundStyle";
+

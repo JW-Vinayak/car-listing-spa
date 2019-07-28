@@ -2,6 +2,8 @@
   background: $white;
   display: flex;
   justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
   color: $dark-gray;
   border-bottom: 1px solid $off-white;
   margin-bottom: $margin-8;
@@ -33,5 +35,11 @@
     padding: $padding-8;
     text-decoration: none;
     color: $dark-gray;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .header {
+    justify-content: center;
   }
 }

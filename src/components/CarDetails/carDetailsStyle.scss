@@ -1,5 +1,4 @@
 section.car-details {
-
   height: 800px;
   .image-container {
     border-bottom: solid 1px $off-white;
@@ -9,11 +8,14 @@ section.car-details {
   section {
     margin-top: $margin-24;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     .car-info {
       width: 50%;
-      min-width: 400px;
+      min-width: 350px;
       color: $dark-gray;
+      margin-bottom: $margin-24;
+
       .car-name {
         font-size: 2em;
         margin-bottom: $margin-24;
@@ -24,20 +26,16 @@ section.car-details {
         font-size: 1.2em;
         margin-bottom: $margin-24;
       }
-
     }
 
     .favorite-car {
       width: 30%;
       min-width: 300px;
+      min-height: 130px;
       padding: $padding-24;
       border: 1px solid $off-white;
       color: $dark-gray;
-      margin-right: $margin-8;
       position: relative;
     }
   }
-
-
-
 }

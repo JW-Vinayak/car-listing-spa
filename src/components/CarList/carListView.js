@@ -36,7 +36,7 @@ export default function CarList(props) {
   }
 
   return (
-    <div>
+    <div className="car-list">
       {modifiedCarList && modifiedCarList.map(car => <CarItem key={car.stockNumber} car={car} />)}
     </div>
   );

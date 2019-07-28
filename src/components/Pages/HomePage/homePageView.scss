@@ -1,0 +1,42 @@
+.home-page-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: $margin-24;
+
+  .car-list-area {
+    min-width: 350px;
+    min-height: 100vh;
+    margin: 0 $margin-24;
+    flex-grow: 1;
+  }
+  .filters {
+    border: 1px solid $off-white;
+    min-width: 300px;
+    height: 170px;
+    padding: $padding-24;
+    margin: 0 $margin-24 $margin-24 $margin-24;
+  }
+
+  .paging-info {
+    float: left;
+    .text {
+      font-size: 1.4em;
+      padding: 0 $padding-8 $padding-8 0;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .car-list-area {
+    text-align: center;
+    .paging-info,
+    .sorter {
+      float: none;
+      margin-bottom: $margin-24;
+    }
+  }
+}

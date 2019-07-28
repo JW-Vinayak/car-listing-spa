@@ -49,7 +49,7 @@ class Filter extends React.Component {
           className="apply-button button"
           onClick={() => this.applyFilter()}
         >
-          APPLY
+          Filter
         </button>
       </div>
     );
