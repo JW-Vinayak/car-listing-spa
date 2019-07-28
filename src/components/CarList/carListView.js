@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./carListStyle.scss";
 import CarItem from "./CarItem/CarItemView";
-import * as mileageConstants from "../../common/constants";
+import { sortCars } from "../../utils/utility";
 
 export default function CarList(props) {
   let { filters, fetchCars, pagination, sorter } = props;
@@ -34,17 +34,7 @@ export default function CarList(props) {
     );
   }
 
-  if (sorter.mileage === mileageConstants.ASCENDING_MILEAGE_SORTING) {
-    modifiedCarList = cars
-      .slice()
-      .sort((carA, carB) => carA.mileage.number - carB.mileage.number);
-  } else if (sorter.mileage === mileageConstants.DESCENDING_MILEAGE_SORTING) {
-    modifiedCarList = cars
-      .slice()
-      .sort((carA, carB) => carB.mileage.number - carA.mileage.number);
-  } else {
-    modifiedCarList = cars.slice();
-  }
+  modifiedCarList = sortCars(cars, sorter.mileage);
 
   return (
     <div className="car-list">

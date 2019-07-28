@@ -1,4 +1,5 @@
 import { getCarList } from "../../utils/api";
+import { formQueryString } from "../../utils/utility";
 
 export const FETCH_CARS_BEGIN = "FETCH_CARS_BEGIN";
 export const FETCH_CARS_SUCCESS = "FETCH_CARS_SUCCESS";
@@ -39,9 +40,8 @@ export function fetchCars() {
       params.page = pagination.currentPage;
     }
 
-    var queryString = Object.keys(params)
-      .map(key => key + "=" + params[key])
-      .join("&");
+    let queryString = formQueryString(params);
+
     console.log("will fire api with", params, queryString);
     dispatch(fetchCarsBegin());
     console.log("sent request to fetch data");
