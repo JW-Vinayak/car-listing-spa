@@ -8,11 +8,11 @@ import {
 } from "../../common/constants";
 
 const Sorter = props => {
-  let [sortOrder, setSortOrder] = useState("none");
+  let [sortOrder, setSortOrder] = useState(props.sortOrder);
   let { setSortOrderInStore } = props;
 
   let handleChange = event => {
-    console.log("sort value", sortOrder, ASCENDING_MILEAGE_SORTING);
+    console.log("sort value", event.target.value);
     setSortOrder(event.target.value);
     setSortOrderInStore(event.target.value);
   };
@@ -34,7 +34,8 @@ const Sorter = props => {
 };
 
 Sorter.propTypes = {
-  setSortOrderInStore: PropTypes.func.isRequired
+  setSortOrderInStore: PropTypes.func.isRequired,
+  sortOrder: PropTypes.string.isRequired
 };
 
 export default Sorter;

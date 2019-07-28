@@ -3,7 +3,7 @@ import { setSortOrder } from './sorterActions';
 import SorterView from './sorterView'
 
 const mapStateToProps = state => ({
-  sortOrder: state.sorter.sortOrder
+  sortOrder: state.sorter.mileage
 })
 
 const mapDispatchToProps = dispatch => ({
