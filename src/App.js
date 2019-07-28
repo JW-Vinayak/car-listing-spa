@@ -10,6 +10,8 @@ import Header from "./components/Header/headerView";
 import Footer from "./components/Footer/footerView";
 import CarDetails from "./components/CarDetails/carDetailsView";
 import PageNotFoundView from './components/PageNotFound/pageNotFoundView';
+
+
 const HomePage = () => {
   return (
     <div>

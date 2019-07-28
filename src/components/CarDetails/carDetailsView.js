@@ -6,24 +6,39 @@ class CarDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      carDetails: null
+      carDetails: null,
+      error: false
     };
     console.log("car details", props);
   }
 
   componentDidMount() {
     console.log("sending request now");
-    getCarDetails(this.props.match.params.stockNumber).then(details => {
-      console.log("car details found", details);
-      this.setState({
-        carDetails: details
-      });
-    });
+    getCarDetails(this.props.match.params.stockNumber)
+      .then(details => {
+        console.log("car details found", details);
+        this.setState({
+          carDetails: details
+        });
+      })
+      .catch(e => {
+        this.setState({
+          error: true
+        })
+      })
   }
 
   render() {
+    if (this.state.error) {
+      return (
+        <div className="error error-box">
+          An error occurred while fetching car details, please try again after
+          some time.
+        </div>
+      );
+    }
     if (!this.state.carDetails) {
-      return <div>No data found</div>;
+      return <div className="error error-box">No data found for this car</div>;
     }
     let car = this.state.carDetails;
     return (
@@ -54,7 +69,7 @@ class CarDetails extends React.Component {
             </p>
           </div>
           <div className="favorite-car">
-            <SetFavoriteCarView {...car}></SetFavoriteCarView>
+            <SetFavoriteCarView {...car} />
           </div>
         </section>
       </section>

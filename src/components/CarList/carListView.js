@@ -16,7 +16,7 @@ export default function CarList(props) {
   const { error, loading, cars } = props;
 
   if (error) {
-    return <div>Error! {error.message}</div>;
+    return <div class="error error-box">Couldn't load car list from server at this moment, please try again later.</div>;
   }
 
   if (loading) {

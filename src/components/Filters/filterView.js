@@ -1,6 +1,7 @@
 import React from "react";
 import ColorFilter from "./Color/colorView";
 import ManufacturerFilter from "./Manufacturer/manufacturerView";
+import { withErrorBoundary } from "../../utils/composition";
 
 class Filter extends React.Component {
   constructor() {
@@ -30,14 +31,18 @@ class Filter extends React.Component {
       <div className="filters">
         <div className="filter">
           <span className="filter-name">Color</span>
-          <ColorFilter onChange={value => this.setColorFilter(value)} />
+          {withErrorBoundary(
+            <ColorFilter onChange={value => this.setColorFilter(value)} />
+          )}
         </div>
 
         <div className="filter">
           <span className="filter-name">Manufacturer</span>
-          <ManufacturerFilter
-            onChange={value => this.setManufacturerFilter(value)}
-          />
+          {withErrorBoundary(
+            <ManufacturerFilter
+              onChange={value => this.setManufacturerFilter(value)}
+            />
+          )}
         </div>
 
         <button
