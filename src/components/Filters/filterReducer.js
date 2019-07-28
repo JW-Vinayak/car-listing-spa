@@ -1,8 +1,8 @@
 import { SET_FILTER } from "./filterActions";
 
 const initialState = {
-  color: null,
-  manufacturer: null
+  color: '',
+  manufacturer: ''
 };
 
 export default function filterReducer(state = initialState, action) {

@@ -43,6 +43,7 @@ class Color extends React.Component {
         <select
           className="filter-dropdown"
           onChange={e => this.handleChange(e)}
+          value={this.props.color}
         >
           <option name="default" value="">
             All car colors

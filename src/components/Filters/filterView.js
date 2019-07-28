@@ -5,11 +5,11 @@ import { withErrorBoundary } from "../../utils/composition";
 import PropTypes from "prop-types";
 
 class Filter extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      color: null,
-      manufacturer: null
+      color: this.props.color,
+      manufacturer: this.props.manufacturer
     };
   }
 
@@ -33,7 +33,7 @@ class Filter extends React.Component {
         <div className="filter">
           <span className="filter-name">Color</span>
           {withErrorBoundary(
-            <ColorFilter onChange={value => this.setColorFilter(value)} />
+            <ColorFilter color={this.state.color} onChange={value => this.setColorFilter(value)} />
           )}
         </div>
 
@@ -41,6 +41,7 @@ class Filter extends React.Component {
           <span className="filter-name">Manufacturer</span>
           {withErrorBoundary(
             <ManufacturerFilter
+              manufacturer={this.state.manufacturer}
               onChange={value => this.setManufacturerFilter(value)}
             />
           )}
@@ -59,7 +60,9 @@ class Filter extends React.Component {
 
 Filter.propTypes = {
   setPageNumber: PropTypes.func.isRequired,
-  setFilter: PropTypes.func.isRequired
+  setFilter: PropTypes.func.isRequired,
+  color: PropTypes.string.isRequired,
+  manufacturer: PropTypes.string.isRequired
 };
 
 export default Filter;

@@ -25,7 +25,7 @@ const Manufacturer = props => {
   }
 
   return (
-    <select className="filter-dropdown" onChange={e => handleChange(e)}>
+    <select className="filter-dropdown" value={props.manufacturer} onChange={e => handleChange(e)}>
       <option name="default" value="">
         All manufacturers
       </option>
