@@ -54,6 +54,208 @@ Array [
 ]
 `;
 
+exports[`HomePage component shallow renders without crashing 1`] = `
+Array [
+  <header
+    className="header"
+  >
+    <div
+      className="header-logo"
+    >
+      <img
+        alt="Company"
+        className="logo"
+        src="company-logo.png"
+      />
+    </div>
+    <div
+      className="header-menu"
+    >
+      <a
+        className="header-link"
+        href="##"
+      >
+        Purchase
+      </a>
+      <a
+        className="header-link"
+        href="##"
+      >
+        My Orders
+      </a>
+      <a
+        className="header-link"
+        href="##"
+      >
+        Sell
+      </a>
+    </div>
+  </header>,
+  <div
+    className="home-page-content"
+  >
+    <div
+      className="filters"
+    >
+      <div
+        className="filter"
+      >
+        <span
+          className="filter-name"
+        >
+          Color
+        </span>
+        <select
+          className="filter-dropdown"
+          onChange={[Function]}
+        >
+          <option
+            name="default"
+            value=""
+          >
+            All car colors
+          </option>
+        </select>
+      </div>
+      <div
+        className="filter"
+      >
+        <span
+          className="filter-name"
+        >
+          Manufacturer
+        </span>
+        <select
+          className="filter-dropdown"
+          onChange={[Function]}
+        >
+          <option
+            name="default"
+            value=""
+          >
+            All manufacturers
+          </option>
+        </select>
+      </div>
+      <button
+        className="apply-button button"
+        onClick={[Function]}
+      >
+        Filter
+      </button>
+    </div>
+    <div
+      className="car-list-area"
+    >
+      <div
+        className="paging-info"
+      >
+        <div
+          className="text bold"
+        >
+          Available Cars
+        </div>
+        <div
+          className="text"
+        >
+          Showing 
+          NaN
+          -
+          NaN
+           of 
+           results
+        </div>
+      </div>
+      <div
+        className="sorter"
+      >
+        <p
+          className="sort-by-text"
+        >
+          Sort by
+        </p>
+        <select
+          className="filter-dropdown sort-dropdown"
+          onChange={[Function]}
+        >
+          <option
+            value="NO_MILEAGE_SORTING"
+          >
+            None
+          </option>
+          <option
+            value="ASCENDING_MILEAGE_SORTING"
+          >
+            Mileage Ascending
+          </option>
+          <option
+            value="DESCENDING_MILEAGE_SORTING"
+          >
+            Mileage Descending
+          </option>
+        </select>
+      </div>
+      <div
+        className="car-list"
+      />
+      <ul
+        className="pagination"
+      >
+        <li>
+          <a
+            className="first-link"
+            href="# "
+            onClick={[Function]}
+          >
+            First
+          </a>
+        </li>
+        <li>
+          <a
+            className="prev-link"
+            href="# "
+            onClick={[Function]}
+          >
+            Previous
+          </a>
+        </li>
+        <li>
+          Page 
+           of 
+        </li>
+        <li>
+          <a
+            className="next-link"
+            href="# "
+            onClick={[Function]}
+          >
+            Next
+          </a>
+        </li>
+        <li>
+          <a
+            className="last-link"
+            href="# "
+            onClick={[Function]}
+          >
+            Last
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>,
+  <footer
+    className="footer"
+  >
+    <div
+      className="copyright"
+    >
+      © AUTO1 Group 2018
+    </div>
+  </footer>,
+]
+`;
+
 exports[`PageNouFoundPage component shallow renders without crashing 1`] = `
 Array [
   <header
@@ -115,6 +317,7 @@ Array [
       <a
         className="link"
         href="/"
+        onClick={[Function]}
       >
         homepage
       </a>

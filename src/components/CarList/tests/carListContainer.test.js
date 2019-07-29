@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import CarList from "../carListContainer";
 import configureMockStore from "redux-mock-store";
 import renderer from "react-test-renderer";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const middlewares = [thunk];
 
@@ -21,7 +22,13 @@ let store = mockStore({
 
 describe("Car list component", () => {
   it("shallow renders without crashing", () => {
-    const tree = renderer.create(<CarList store={store} />).toJSON();
+    const tree = renderer
+      .create(
+        <Router>
+          <CarList store={store} />
+        </Router>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
   it("renders two car items", () => {
@@ -52,7 +59,13 @@ describe("Car list component", () => {
       pagination: { currentPage: 1 },
       sorter: { mileage: "NO_MILEAGE_SORTING" }
     });
-    const tree = renderer.create(<CarList store={store} />).toJSON();
+    const tree = renderer
+      .create(
+        <Router>
+          <CarList store={store} />
+        </Router>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
   it("renders loading blocks if loading flag is true", () => {
@@ -66,7 +79,13 @@ describe("Car list component", () => {
       pagination: {},
       sorter: {}
     });
-    const tree = renderer.create(<CarList store={store} />).toJSON();
+    const tree = renderer
+      .create(
+        <Router>
+          <CarList store={store} />
+        </Router>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
   it("renders sorted car item due to specified filter", () => {
@@ -97,7 +116,13 @@ describe("Car list component", () => {
       pagination: { currentPage: 1 },
       sorter: { mileage: "ASCENDING_MILEAGE_SORTING" }
     });
-    const tree = renderer.create(<CarList store={store} />).toJSON();
+    const tree = renderer
+      .create(
+        <Router>
+          <CarList store={store} />
+        </Router>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

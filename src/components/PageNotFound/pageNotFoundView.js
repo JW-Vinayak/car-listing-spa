@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/company-logo.png";
+import { Link } from "react-router-dom";
 const PageNotFound = () => {
   return (
     <section class="page-not-found">
@@ -10,9 +11,9 @@ const PageNotFound = () => {
       </p>
       <p className="text">
         You can always go back to{" "}
-        <a href="/" className="link">
+        <Link to="/" className="link">
           homepage
-        </a>
+        </Link>
       </p>
     </section>
   );

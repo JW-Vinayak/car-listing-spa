@@ -252,6 +252,7 @@ exports[`Car list component renders sorted car item due to specified filter 1`] 
       <a
         className="view-details-link"
         href="/car/10019"
+        onClick={[Function]}
       >
         View Details
       </a>
@@ -298,6 +299,7 @@ exports[`Car list component renders sorted car item due to specified filter 1`] 
       <a
         className="view-details-link"
         href="/car/10019"
+        onClick={[Function]}
       >
         View Details
       </a>
@@ -351,6 +353,7 @@ exports[`Car list component renders two car items 1`] = `
       <a
         className="view-details-link"
         href="/car/10019"
+        onClick={[Function]}
       >
         View Details
       </a>
@@ -397,6 +400,7 @@ exports[`Car list component renders two car items 1`] = `
       <a
         className="view-details-link"
         href="/car/10019"
+        onClick={[Function]}
       >
         View Details
       </a>

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { Link } from "react-router-dom";
 const CarItem = props => {
   let { car } = props;
   let content;
@@ -19,9 +19,9 @@ const CarItem = props => {
             <span>{car.fuelType} - </span>
             <span>{car.color}</span>
           </div>
-          <a href={`/car/${car.stockNumber}`} className="view-details-link">
+          <Link to={`/car/${car.stockNumber}`} className="view-details-link">
             View Details
-          </a>
+          </Link>
         </div>
       </div>
     );
