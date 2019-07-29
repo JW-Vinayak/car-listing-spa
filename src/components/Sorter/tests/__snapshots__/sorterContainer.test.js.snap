@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sorter component shallow renders without crashing 1`] = `
+<div
+  className="sorter"
+>
+  <p
+    className="sort-by-text"
+  >
+    Sort by
+  </p>
+  <select
+    className="filter-dropdown sort-dropdown"
+    onChange={[Function]}
+    value="NO_MILEAGE_SORTING"
+  >
+    <option
+      value="NO_MILEAGE_SORTING"
+    >
+      None
+    </option>
+    <option
+      value="ASCENDING_MILEAGE_SORTING"
+    >
+      Mileage Ascending
+    </option>
+    <option
+      value="DESCENDING_MILEAGE_SORTING"
+    >
+      Mileage Descending
+    </option>
+  </select>
+</div>
+`;

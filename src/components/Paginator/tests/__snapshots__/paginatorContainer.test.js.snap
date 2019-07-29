@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paginator component shallow renders without crashing 1`] = `
+<ul
+  className="pagination"
+>
+  <li>
+    <a
+      className="first-link"
+      href="# "
+      onClick={[Function]}
+    >
+      First
+    </a>
+  </li>
+  <li>
+    <a
+      className="prev-link"
+      href="# "
+      onClick={[Function]}
+    >
+      Previous
+    </a>
+  </li>
+  <li>
+    Page 
+    1
+     of 
+    9
+  </li>
+  <li>
+    <a
+      className="next-link"
+      href="# "
+      onClick={[Function]}
+    >
+      Next
+    </a>
+  </li>
+  <li>
+    <a
+      className="last-link"
+      href="# "
+      onClick={[Function]}
+    >
+      Last
+    </a>
+  </li>
+</ul>
+`;

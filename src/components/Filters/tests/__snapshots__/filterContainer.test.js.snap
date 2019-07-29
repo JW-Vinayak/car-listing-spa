@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter component shallow renders without crashing 1`] = `
+<div
+  className="filters"
+>
+  <div
+    className="filter"
+  >
+    <span
+      className="filter-name"
+    >
+      Color
+    </span>
+    <select
+      className="filter-dropdown"
+      onChange={[Function]}
+      value="red"
+    >
+      <option
+        name="default"
+        value=""
+      >
+        All car colors
+      </option>
+    </select>
+  </div>
+  <div
+    className="filter"
+  >
+    <span
+      className="filter-name"
+    >
+      Manufacturer
+    </span>
+    <select
+      className="filter-dropdown"
+      onChange={[Function]}
+      value="BMW"
+    >
+      <option
+        name="default"
+        value=""
+      >
+        All manufacturers
+      </option>
+    </select>
+  </div>
+  <button
+    className="apply-button button"
+    onClick={[Function]}
+  >
+    Filter
+  </button>
+</div>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagingInfo component shallow renders without crashing 1`] = `
+<div
+  className="paging-info"
+>
+  <div
+    className="text bold"
+  >
+    Available Cars
+  </div>
+  <div
+    className="text"
+  >
+    Showing 
+    1
+    -
+    10
+     of 
+    76
+     results
+  </div>
+</div>
+`;

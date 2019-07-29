@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Car details component shallow renders without crashing 1`] = `
+<div
+  className="error-box"
+>
+  Data is Loading...
+</div>
+`;

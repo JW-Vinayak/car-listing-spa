@@ -1,0 +1,412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Car list component renders loading blocks if loading flag is true 1`] = `
+<div
+  className="car-list"
+>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <div
+      className="empty-box"
+    />
+    <div
+      className="car-info"
+    >
+      <div
+        className="no-car-name"
+      />
+      <div
+        className="no-car-details"
+      />
+      <div
+        className="no-view-details-link"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Car list component renders sorted car item due to specified filter 1`] = `
+<div
+  className="car-list"
+>
+  <div
+    className="car-item"
+  >
+    <img
+      alt="a car"
+      className="car-image"
+    />
+    <div
+      className="car-info"
+    >
+      <h3
+        className="car-name"
+      >
+        i8
+      </h3>
+      <div
+        className="car-details"
+      >
+        <span>
+          Stock # 
+          10019
+           - 
+        </span>
+        <span>
+          12112
+           
+          KM
+           -
+           
+        </span>
+        <span>
+          Petrol
+           - 
+        </span>
+        <span>
+          black
+        </span>
+      </div>
+      <a
+        className="view-details-link"
+        href="/car/10019"
+      >
+        View Details
+      </a>
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <img
+      alt="a car"
+      className="car-image"
+    />
+    <div
+      className="car-info"
+    >
+      <h3
+        className="car-name"
+      >
+        GLC-Klasse
+      </h3>
+      <div
+        className="car-details"
+      >
+        <span>
+          Stock # 
+          10019
+           - 
+        </span>
+        <span>
+          181526
+           
+          KM
+           -
+           
+        </span>
+        <span>
+          Petrol
+           - 
+        </span>
+        <span>
+          blue
+        </span>
+      </div>
+      <a
+        className="view-details-link"
+        href="/car/10019"
+      >
+        View Details
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Car list component renders two car items 1`] = `
+<div
+  className="car-list"
+>
+  <div
+    className="car-item"
+  >
+    <img
+      alt="a car"
+      className="car-image"
+    />
+    <div
+      className="car-info"
+    >
+      <h3
+        className="car-name"
+      >
+        GLC-Klasse
+      </h3>
+      <div
+        className="car-details"
+      >
+        <span>
+          Stock # 
+          10019
+           - 
+        </span>
+        <span>
+          181526
+           
+          KM
+           -
+           
+        </span>
+        <span>
+          Petrol
+           - 
+        </span>
+        <span>
+          blue
+        </span>
+      </div>
+      <a
+        className="view-details-link"
+        href="/car/10019"
+      >
+        View Details
+      </a>
+    </div>
+  </div>
+  <div
+    className="car-item"
+  >
+    <img
+      alt="a car"
+      className="car-image"
+    />
+    <div
+      className="car-info"
+    >
+      <h3
+        className="car-name"
+      >
+        i8
+      </h3>
+      <div
+        className="car-details"
+      >
+        <span>
+          Stock # 
+          10019
+           - 
+        </span>
+        <span>
+          12112
+           
+          KM
+           -
+           
+        </span>
+        <span>
+          Petrol
+           - 
+        </span>
+        <span>
+          black
+        </span>
+      </div>
+      <a
+        className="view-details-link"
+        href="/car/10019"
+      >
+        View Details
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Car list component shallow renders without crashing 1`] = `
+<div
+  className="car-list"
+/>
+`;

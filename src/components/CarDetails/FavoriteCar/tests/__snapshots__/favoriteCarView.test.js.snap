@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorite car component shallow renders without crashing 1`] = `
+Array [
+  <p>
+    if you like this car, click the button and save it in your collection of favourite items.
+  </p>,
+  <button
+    className="button favorite"
+    onClick={[Function]}
+  >
+    Save
+  </button>,
+]
+`;
