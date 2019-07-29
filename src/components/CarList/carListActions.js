@@ -42,13 +42,10 @@ export function fetchCars() {
 
     let queryString = formQueryString(params);
 
-    console.log("will fire api with", params, queryString);
     dispatch(fetchCarsBegin());
-    console.log("sent request to fetch data");
 
     return getCarList(queryString)
       .then(json => {
-        console.log("data is fetched", json);
         dispatch(fetchCarsSuccess(json.cars));
         dispatch(
           setRecordInfo({
@@ -56,7 +53,6 @@ export function fetchCars() {
             totalRecords: json.totalCarsCount
           })
         );
-        console.log("data after dispatch", getState());
         return json.cars;
       })
       .catch(error => dispatch(fetchCarsFailure(error)));

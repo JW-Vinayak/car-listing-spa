@@ -8,7 +8,6 @@ const initialState = {
 export default function sortReducer(state = initialState, action) {
   switch (action.type) {
     case SET_SORT_ORDER:
-      console.log('sort order is being set to', action.payload.sortOrder)
       return {
         ...state,
         mileage: action.payload.sortOrder

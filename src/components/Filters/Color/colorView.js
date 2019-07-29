@@ -15,13 +15,11 @@ class Color extends React.Component {
   componentDidMount() {
     fetchColors()
       .then(colors => {
-        console.log("received colors", colors);
         this.setState({
           colors: colors
         });
       })
       .catch(e => {
-        console.log("error in color", e);
         this.setState({
           error: true
         });
@@ -29,7 +27,6 @@ class Color extends React.Component {
   }
 
   handleChange(event) {
-    console.log("log value", event.target.value);
     let newColor = event.target.value;
     this.props.onChange(newColor);
   }

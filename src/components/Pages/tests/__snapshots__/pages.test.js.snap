@@ -294,7 +294,7 @@ Array [
     </div>
   </header>,
   <section
-    class="page-not-found"
+    className="page-not-found"
   >
     <img
       alt="Company"

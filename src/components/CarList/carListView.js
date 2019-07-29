@@ -7,9 +7,7 @@ import { sortCars } from "../../utils/utility";
 export default function CarList(props) {
   let { filters, fetchCars, pagination, sorter } = props;
   let modifiedCarList = [];
-  console.log("car list props are", props);
   useEffect(() => {
-    console.log("calling fetchCars now");
     fetchCars();
   }, [filters, fetchCars, pagination]);
 

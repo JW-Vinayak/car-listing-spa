@@ -69,7 +69,6 @@ describe("async actions", () => {
       totalRecords: 0
     });
     return store.dispatch(actions.fetchCars()).then(() => {
-      console.log("get actions output", store.getActions(), expectedActions);
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

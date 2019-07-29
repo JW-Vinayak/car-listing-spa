@@ -38,7 +38,6 @@ export default function carListReducer(state = initialState, action) {
       };
 
     case SET_RECORDS_INFO:
-      console.log('SET_TOTAL_PAGES', action)
       return {
         ...state,
         totalPages: action.payload.recordsInfo.totalPages,

@@ -17,7 +17,6 @@ const FavoriteCarSetting = props => {
     localStorage.setItem(key);
     setIsStored(true);
   };
-  console.log('is car stored',key, isStored);
   if (!isStored) {
     content = (
       <Fragment>

@@ -7,11 +7,9 @@ const Manufacturer = props => {
   let [error, setError] = useState(false);
 
   function handleChange(event) {
-    console.log("log value", event.target.value);
     props.onChange(event.target.value);
   }
   useEffect(() => {
-    console.log("fetching mans");
     fetchManufacturers().then(list => {
       setManufacturers(list);
     })

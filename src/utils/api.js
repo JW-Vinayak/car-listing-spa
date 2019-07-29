@@ -9,11 +9,9 @@ export const sendAPIRequest = options => {
   return fetch(url)
     .then(res => res.json())
     .then(json => {
-      console.log("response is", json);
       return json;
     })
     .catch(e => {
-      console.log("handle rejected", e);
       return Promise.reject({
         error: true,
         errorDetails: e

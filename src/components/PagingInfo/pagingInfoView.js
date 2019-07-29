@@ -5,16 +5,10 @@ import PropTypes from "prop-types";
 const PagingInfo = props => {
   const { currentPage, totalPages, totalRecords } = props;
   const recordsPerPage = 10;
-  console.log(
-    currentPage,
-    recordsPerPage,
-    totalPages,
-    currentPage * recordsPerPage
-  );
+
   const fromPage = (currentPage - 1) * recordsPerPage + 1;
   let toPage = 0;
 
-  console.log("paging props", currentPage === totalPages, fromPage);
 
   if (currentPage === totalPages) {
     toPage = fromPage + (totalRecords % 10) - 1;

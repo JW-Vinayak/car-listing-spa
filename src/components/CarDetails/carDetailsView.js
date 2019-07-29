@@ -10,14 +10,11 @@ class CarDetails extends React.Component {
       carDetails: null,
       error: false
     };
-    console.log("car details", props);
   }
 
   componentDidMount() {
-    console.log("sending request now");
     getCarDetails(this.props.match.params.stockNumber)
       .then(details => {
-        console.log("car details found", details);
         this.setState({
           carDetails: details
         });

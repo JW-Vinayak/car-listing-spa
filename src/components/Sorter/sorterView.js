@@ -12,7 +12,6 @@ const Sorter = props => {
   let { setSortOrderInStore } = props;
 
   let handleChange = event => {
-    console.log("sort value", event.target.value);
     setSortOrder(event.target.value);
     setSortOrderInStore(event.target.value);
   };

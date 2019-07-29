@@ -22,7 +22,6 @@ class Filter extends React.Component {
   }
 
   applyFilter() {
-    console.log("current filters are", this.state);
     this.props.setPageNumber(1);
     this.props.setFilter(this.state);
   }

@@ -16,7 +16,6 @@ describe("ColorView", () => {
     enzymeWrapper.setState({
       colors: ["white", "black"]
     });
-    console.log(enzymeWrapper.html());
     expect(enzymeWrapper.find("select option").length).toBe(3);
   });
 });
