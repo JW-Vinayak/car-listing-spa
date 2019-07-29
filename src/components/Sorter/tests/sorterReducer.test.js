@@ -1,9 +1,9 @@
-import sorterReducer from "./sorterReducer";
+import sorterReducer from "../sorterReducer";
 import {
   NO_MILEAGE_SORTING,
   ASCENDING_MILEAGE_SORTING
-} from "../../common/constants";
-import { SET_SORT_ORDER } from "./sorterActions";
+} from "../../../common/constants";
+import { SET_SORT_ORDER } from "../sorterActions";
 
 const initialState = {
   mileage: NO_MILEAGE_SORTING

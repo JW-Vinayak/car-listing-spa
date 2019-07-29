@@ -15,7 +15,7 @@ const PageNotFoundPage = lazy(() =>
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Suspense fallback={<Loading />}>
         <Switch>
           <Route exact path="/" component={HomePage} />

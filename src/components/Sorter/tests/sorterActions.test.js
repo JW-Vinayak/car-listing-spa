@@ -1,5 +1,5 @@
-import * as actions from "./sorterActions";
-import { NO_MILEAGE_SORTING } from "../../common/constants";
+import * as actions from "../sorterActions";
+import { NO_MILEAGE_SORTING } from "../../../common/constants";
 
 describe("sorter actions", () => {
   it("should create action to set sorter in store", () => {

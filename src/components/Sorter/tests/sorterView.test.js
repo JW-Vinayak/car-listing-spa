@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import SorterView from "./sorterView";
+import SorterView from "../sorterView";
 
 function setup() {
   const props = {};

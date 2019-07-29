@@ -1,5 +1,5 @@
-import reducer from "./carListReducer";
-import * as actions from "./carListActions";
+import reducer from "../carListReducer";
+import * as actions from "../carListActions";
 
 describe("car list reducer", () => {
   it("should return the initial state", () => {

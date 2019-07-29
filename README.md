@@ -7,7 +7,7 @@ This is a sample Car listing Single Page Application.
 * use of Error Boundaries for error handling
 * use of composition technique to avoid repeatative code
 * use of static type checking using PropTypes
-* made this app responsive, works in any device
+* made this app responsive, renders best in any device
 * unit test for components
 * use of .editorconfig for consistent formatting
 * linting as per provided by create react app by default
@@ -17,7 +17,7 @@ This is a sample Car listing Single Page Application.
 # Performance Optimisation
 
 * used dynamic imports for code splitting. Creates separate chunks of bundles, leads to faster page load times
-* used browser hints (preload, preconnect) to load resources
+* used browser hints (preload, preconnect) to optimise resource loading
 
 # Steps to run this app
 

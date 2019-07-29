@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import FilterView from "./filterView";
+import FilterView from "../filterView";
 
 function setup() {
   const enzymeWrapper = shallow(<FilterView />);

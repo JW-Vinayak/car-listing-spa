@@ -8,7 +8,7 @@ import { WithHeaderAndFooter } from "../../../utils/composition";
 
 export const HomePage = () => {
   return (
-    <WithHeaderAndFooter className="App">
+    <WithHeaderAndFooter>
       <div className="home-page-content">
         <Filters />
         <div className="car-list-area">

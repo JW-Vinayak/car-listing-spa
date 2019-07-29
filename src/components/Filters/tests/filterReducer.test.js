@@ -1,10 +1,10 @@
-import reducer from "./filterReducer";
-import * as actions from "./filterActions";
+import reducer from "../filterReducer";
+import * as actions from "../filterActions";
 
 let initialState = {
-  color: null,
-  manufacturer: null
-}
+  color: "",
+  manufacturer: ""
+};
 describe("filter reducer", () => {
   it("should return the initial state", () => {
     expect(reducer(undefined, {})).toEqual(initialState);
@@ -12,9 +12,9 @@ describe("filter reducer", () => {
 
   it("should handle SET_FILTER", () => {
     let filter = {
-      color: 'black',
-      manufacturer: 'BMW'
-    }
+      color: "black",
+      manufacturer: "BMW"
+    };
     expect(
       reducer(initialState, {
         type: actions.SET_FILTER,

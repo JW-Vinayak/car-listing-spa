@@ -1,5 +1,5 @@
-import reducer from "./paginatorReducer";
-import * as actions from "./paginatorActions";
+import reducer from "../paginatorReducer";
+import * as actions from "../paginatorActions";
 
 let initialState = {
   currentPage: 1

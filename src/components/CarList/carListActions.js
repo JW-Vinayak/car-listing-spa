@@ -46,7 +46,7 @@ export function fetchCars() {
     dispatch(fetchCarsBegin());
     console.log("sent request to fetch data");
 
-    getCarList(queryString)
+    return getCarList(queryString)
       .then(json => {
         console.log("data is fetched", json);
         dispatch(fetchCarsSuccess(json.cars));

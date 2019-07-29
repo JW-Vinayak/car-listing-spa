@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
-import CarListView from "./carListView";
-import { NO_MILEAGE_SORT } from "../../common/constants";
+import CarListView from "../carListView";
+import { NO_MILEAGE_SORT } from "../../../common/constants";
 
 function setup() {
   const props = {

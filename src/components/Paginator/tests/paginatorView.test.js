@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import PaginatorView from "./paginatorView";
+import PaginatorView from "../paginatorView";
 
 function setup() {
   const props = {

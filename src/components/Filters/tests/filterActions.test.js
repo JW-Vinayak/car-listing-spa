@@ -1,4 +1,4 @@
-import * as actions from "./filterActions";
+import * as actions from "../filterActions";
 
 
 describe("actions", () => {
