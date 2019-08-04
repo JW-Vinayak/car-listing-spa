@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
   error: state.cars.error,
   filters: state.filters,
   pagination: state.pagination,
-  sorter: state.sorter
+  mileage: state.sorter.mileage
 });
 
 const mapDispatchToProps = dispatch => ({

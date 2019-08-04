@@ -5,11 +5,11 @@ import CarItem from "./CarItem/CarItemView";
 import { sortCars } from "../../utils/utility";
 
 export default function CarList(props) {
-  let { filters, fetchCars, pagination, sorter } = props;
+  let { filters, fetchCars, pagination, mileage } = props;
   let modifiedCarList = [];
   useEffect(() => {
     fetchCars();
-  }, [filters, fetchCars, pagination]);
+  }, [filters, pagination, mileage]);
 
   const { error, loading, cars } = props;
 
@@ -31,13 +31,10 @@ export default function CarList(props) {
       </div>
     );
   }
-
-  modifiedCarList = sortCars(cars, sorter.mileage);
-
   return (
     <div className="car-list">
-      {modifiedCarList &&
-        modifiedCarList.map(car => <CarItem key={car.stockNumber} car={car} />)}
+      {cars &&
+        cars.map(car => <CarItem key={car.stockNumber} car={car} />)}
     </div>
   );
 }
@@ -46,7 +43,7 @@ CarList.propTypes = {
   filters: PropTypes.object.isRequired,
   fetchCars: PropTypes.func.isRequired,
   pagination: PropTypes.object.isRequired,
-  sorter: PropTypes.object.isRequired,
+  mileage: PropTypes.string.isRequired,
   error: PropTypes.object,
   loading: PropTypes.bool.isRequired,
   cars: PropTypes.array.isRequired

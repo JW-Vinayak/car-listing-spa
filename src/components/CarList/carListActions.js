@@ -1,6 +1,11 @@
 import { getCarList } from "../../utils/api";
 import { formQueryString } from "../../utils/utility";
 
+import {
+  ASCENDING_MILEAGE_SORTING,
+  DESCENDING_MILEAGE_SORTING
+} from "../../common/constants";
+
 export const FETCH_CARS_BEGIN = "FETCH_CARS_BEGIN";
 export const FETCH_CARS_SUCCESS = "FETCH_CARS_SUCCESS";
 export const FETCH_CARS_FAILURE = "FETCH_CARS_FAILURE";
@@ -29,6 +34,7 @@ export function fetchCars() {
   return (dispatch, getState) => {
     let params = {},
       filters = getState().filters,
+      sorter = getState().sorter.mileage,
       pagination = getState().pagination;
     if (filters.color) {
       params.color = filters.color;
@@ -38,6 +44,14 @@ export function fetchCars() {
     }
     if (pagination.currentPage) {
       params.page = pagination.currentPage;
+    }
+    if (sorter) {
+      if (sorter ===  ASCENDING_MILEAGE_SORTING) {
+        params.sort = 'asc'
+      }
+      else if (sorter === DESCENDING_MILEAGE_SORTING) {
+        params.sort = "des"
+      }
     }
 
     let queryString = formQueryString(params);
