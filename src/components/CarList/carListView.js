@@ -2,16 +2,13 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./carListStyle.scss";
 import CarItem from "./CarItem/CarItemView";
-import { sortCars } from "../../utils/utility";
 
 export default function CarList(props) {
-  let { filters, fetchCars, pagination, mileage } = props;
-  let modifiedCarList = [];
+  let { filters, fetchCars, pagination, mileage, error, loading, cars } = props;
+
   useEffect(() => {
     fetchCars();
   }, [filters, pagination, mileage]);
-
-  const { error, loading, cars } = props;
 
   if (error) {
     return (
@@ -33,8 +30,7 @@ export default function CarList(props) {
   }
   return (
     <div className="car-list">
-      {cars &&
-        cars.map(car => <CarItem key={car.stockNumber} car={car} />)}
+      {cars && cars.map(car => <CarItem key={car.stockNumber + car.modelName} car={car} />)}
     </div>
   );
 }
