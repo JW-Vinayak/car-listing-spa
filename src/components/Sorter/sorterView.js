@@ -8,11 +8,9 @@ import {
 } from "../../common/constants";
 
 const Sorter = props => {
-  let [sortOrder, setSortOrder] = useState(props.sortOrder);
   let { setSortOrderInStore } = props;
 
   let handleChange = event => {
-    setSortOrder(event.target.value);
     setSortOrderInStore(event.target.value);
   };
 
@@ -21,7 +19,7 @@ const Sorter = props => {
       <p className="sort-by-text">Sort by</p>
       <select
         className="filter-dropdown sort-dropdown"
-        value={sortOrder}
+        value={props.sortOrder}
         onChange={e => handleChange(e)}
       >
         <option value={NO_MILEAGE_SORTING}>None</option>
