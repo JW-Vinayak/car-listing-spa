@@ -32,6 +32,7 @@ class Color extends React.Component {
   }
 
   render() {
+    // throw network error here so that Error boundaries can capture them and show fallback UI.
     if (this.state.error) {
       throw new Error();
     }

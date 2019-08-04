@@ -10,20 +10,26 @@ const Manufacturer = props => {
     props.onChange(event.target.value);
   }
   useEffect(() => {
-    fetchManufacturers().then(list => {
-      setManufacturers(list);
-    })
-    .catch(e => {
-      setError(true);
-    })
+    fetchManufacturers()
+      .then(list => {
+        setManufacturers(list);
+      })
+      .catch(e => {
+        setError(true);
+      });
   }, []);
 
+  // throw network error here so that Error boundaries can capture them and show fallback UI.
   if (error) {
     throw new Error();
   }
 
   return (
-    <select className="filter-dropdown" value={props.manufacturer} onChange={e => handleChange(e)}>
+    <select
+      className="filter-dropdown"
+      value={props.manufacturer}
+      onChange={e => handleChange(e)}
+    >
       <option name="default" value="">
         All manufacturers
       </option>
@@ -45,6 +51,6 @@ const Manufacturer = props => {
 
 Manufacturer.propTypes = {
   onChange: PropTypes.func.isRequired
-}
+};
 
 export default Manufacturer;
