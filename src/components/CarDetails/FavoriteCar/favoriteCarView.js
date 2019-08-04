@@ -1,20 +1,20 @@
 import React, { useState, Fragment } from "react";
-import * as localStorage from '../../../utils/localStorage';
-import PropTypes from 'prop-types';
+import * as localStorage from "../../../utils/localStorage";
+import PropTypes from "prop-types";
 
 const FavoriteCarSetting = props => {
   let { stockNumber } = props;
-  let key = "Car-" + stockNumber;
-  let [isStored, setIsStored] = useState(localStorage.hasItem(key));
+  let key = stockNumber.toString();
+  let [isStored, setIsStored] = useState(localStorage.hasCarAsFavorite(key));
   let content;
 
   let removeItem = () => {
-    localStorage.removeItem(key);
+    localStorage.removeCarAsFavorite(key);
     setIsStored(false);
   };
 
   let setItem = () => {
-    localStorage.setItem(key);
+    localStorage.setCarAsFavorite(key);
     setIsStored(true);
   };
   if (!isStored) {
@@ -48,6 +48,6 @@ const FavoriteCarSetting = props => {
 
 FavoriteCarSetting.propTypes = {
   stockNumber: PropTypes.number.isRequired
-}
+};
 
 export default FavoriteCarSetting;
